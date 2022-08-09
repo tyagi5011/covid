@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+ 
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+<div class="container d-flex align-items-center">
+<nav id="navbar" class="navbar">
+  <ul>
+    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+    <li><a class="nav-link scrollto" href="#statistics">All India Statistics</a></li>
+    <li><a class="nav-link scrollto" href="#team">Statewise Statistics</a></li>
+    <li><a class="nav-link scrollto" href="#about">Latest Updates</a></li>
+    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+    <li><a class="getstarted scrollto" href="#about">Know More</a></li>
+  </ul>
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav><!-- .navbar -->
+
+</div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+<div class="carousel-inner" role="listbox">
+    <!-- Slide 1 -->
+    <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+      <div class="carousel-container">
+        <div class="container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>COVID19 VA</span></h2>
+          <p class="animate__animated animate__fadeInUp"> To know more about COVID19 , Please click the below Read More button or talk with our chatbot present at the right bottom .</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+</a>
+
+<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+  <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+</a>
+
+</div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+<!-- ======= Statistics Section ======= -->
+<section id="statistics" class="statistics">
+<div class="container">
+
+  <div class="section-title">
+    <h2>Statistics</h2>
+    <p>Below statistics represent Total cases, Recovered Cases and Total number of Deaths </p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+      <div class="icon-box iconbox-orange ">
+        <table class="centerr"> 
+          <tr>
+            <th>Total Cases</th>
+            <th>Recovered Cases</th>
+            <th>Death Cases</th>
+          </tr>
+          <tr>
+            <td><p>{{variable1}}</p></td>
+            <td>{{variable2}}</td>
+            <td>{{variable3}}</td>
+          </tr>
+
+        </table>
+      </div>
+     </div>
+    
+</div>
+
+</section><!-- End Statistics Section -->
+
+    
+<!-- ======= Statwise Statistics Section ======= -->
+<section id="team" class="team section-bg">
+<div class="container">
+
+  <div class="section-title">
+    <h2> All India - state wise Statistics</h2>
+    <p>Below Table contains the total cases in each state of India</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+      <div class="member">
+        <table  class="centerr">
+            {%for key,value in div_placeholder.items()%}
+              <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+              </tr>
+            {% endfor%}
+        </table>
+      </div>
+    </div>
+
+</div>
+</section><!-- End Statewise Statistics Section -->
+
+
+
+
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+<div class="container">
+
+  <div class="section-title">
+    <h2>Latest Updates</h2>
+  </div>
+
+  <div class="row">
+      <ul>
+        <li><a href="https://www.mohfw.gov.in/pdf/GuidelinesCovidvaccination12to14yrchildrenMarch2022.pdf" target="_blank">Guidelines for Covid-19 Vaccination of Children Between 12-14 Years of Age</a></li>
+        <li><a href="https://www.mohfw.gov.in/pdf/GuidelinesforInternationalarrivalsupdatedon10thFebruary2022.pdf" target="_blank">Guidelines for International arrivals</a></li>
+        <li><a href="https://www.prevention.com/health/health-conditions/a40117340/cdc-long-covid-affects-older-adults-more/">CDC: 1 in 5 Adult COVID-19 Survivors Has Long COVID</a></li>
+        <li><a href="https://www.news-medical.net/news/20220523/Women-who-are-pregnant-or-nursing-should-receive-a-COVID-booster-vaccination.aspx"> Women who are pregnant should take  booster vaccination</a></li>
+      <ul>
+  </div>
+
+
+  </div>
+
+</div>
+</section><!-- End About Us Section -->
+    
+
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+<div class="container">
+
+  <div class="section-title">
+    <h2>Contact</h2>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-5 d-flex align-items-stretch">
+      <div class="info">
+        <div class="address">
+          <i class="bi bi-geo-alt"></i>
+          <h4>Location:</h4>
+          <p>Begumpet, India - 500032</p>
+        </div>
+
+        <div class="email">
+          <i class="bi bi-envelope"></i>
+          <h4>Email:</h4>
+          <p>covidva@gmail.com</p>
+        </div>
+
+        <div class="phone">
+          <i class="bi bi-phone"></i>
+          <h4>Call:</h4>
+          <p>+91 9839839389</p>
+        </div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+<h3>COVID19 VIRTUAL ASSISTANT</h3>
+<div class="copyright">
+  &copy; Copyright <strong><span>COVID19 VIRTUAL ASSISTANT</span></strong>. All Rights Reserved
+</div>
+</div>
+</footer><!-- End Footer -->
+
+
+
+
+
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">COVID-19 Virtual Assistant</h4>
+                    <p class="chatbox__description--header">Hello, How can I help you?</p>
+                    
+                </div>
+            </div>
+            <p class="constant">Type <b style="color:white;">"options"</b> to get the services provided</p>
+            <div class="chatbox__messages">
+                <div class="messages__item messages__item--visitor">
+                    <p>What do you want to do?</p>
+                    <button class="showButtons"  id="btn1" >Search Nearby Hospitals</button>
+                    <button class="showButtons" id="btn2" >Ask Queries</button>
+                    <button class="showButtons"  onclick="getInfo()">Emergency Information</button>
+                    <button class="showButtons"  id="btn4">Speech to Text</button>
+                </div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button" style="font-size:14px">Send</button>
+                <button title="speak after a few seconds!" class="chatbox__send--footer send__button mic" id="microphone" ><i class="fa fa-microphone"></i></button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+        </div>
+    </div>
+</div>
+    
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    
+</body>
+</html>
